@@ -1,0 +1,8 @@
+div.dictline {
+    clear: both;
+    padding: 1px 5px;
+}
+
+span.originalWord {
+    font-weight: bold;
+}

@@ -1,0 +1,8 @@
+div#searchbox {
+    float: right;
+    width: 200px;
+}
+
+div#searchbox input {
+    width: 190px;
+}

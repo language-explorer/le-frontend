@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import TextPanel from './TextPanel';
+import DictPanel from './DictPanel';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      dicts: [],
+      texts: []
+    }
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:8081/api/1.0/dict")
+    .then(result => {
+      return result.json();
+    })
+    .then(data => {
+      this.setState ({ dicts: data })
+    });
+    fetch("http://localhost:8081/api/1.0/text")
+    .then(result => {
+      return result.json();
+    })
+    .then(data => {
+      this.setState ({ texts: data })
+    })
+
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <TextPanel texts={this.state.texts}/>
+        <DictPanel dicts={this.state.dicts}/>
       </div>
     );
   }
