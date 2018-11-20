@@ -4,4 +4,9 @@ div#dictionary {
     max-height: 25%;
     min-height: 25%;
     overflow: scroll;
+    vertical-align: top;
+}
+
+div#dictitems {
+    width: calc(50% - 12px);
 }

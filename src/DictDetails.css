@@ -1,0 +1,11 @@
+div#dictdetails {
+    width: calc(50% - 12px);
+    position: fixed;
+    right: 8px;
+    top: 0x;
+}
+
+.toolbar {
+    background-color: silver;
+    min-height: 20px;
+}

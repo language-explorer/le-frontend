@@ -1,8 +1,9 @@
 div#searchbox {
-    float: right;
     width: 200px;
+    position: fixed;
+    right: calc(50% - 8px);
 }
 
 div#searchbox input {
-    width: 190px;
+    width: 150px;
 }
